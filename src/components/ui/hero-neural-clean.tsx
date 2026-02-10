@@ -124,7 +124,7 @@ export default function HeroNeuralClean({
       <div className="absolute bottom-20 right-20 h-96 w-96 rounded-full bg-[#00a4e4]/5 blur-[100px] z-[1]" />
 
       {/* Content */}
-      <div className="relative z-10 flex-1 flex flex-col justify-center py-16 px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 flex-1 flex flex-col justify-center pt-28 pb-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl w-full mx-auto text-center">
           
           {/* Badge - Apple style */}

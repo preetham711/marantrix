@@ -1,4 +1,5 @@
 import HeroNeuralClean from '@/components/ui/hero-neural-clean';
+import NavbarApple from './components/NavbarApple';
 import ServicesApple from './components/ServicesApple';
 import ProcessApple from './components/ProcessApple';
 import ProjectsApple from './components/ProjectsApple';
@@ -14,12 +15,20 @@ function App() {
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      const headerOffset = 44;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
     }
   };
 
   return (
     <div className="min-h-screen bg-white">
+      <NavbarApple />
       <ScrollProgress />
       
       {/* 1. HERO - Introduce what we do */}

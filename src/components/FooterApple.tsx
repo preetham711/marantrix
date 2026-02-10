@@ -62,6 +62,23 @@ const FooterApple = () => {
     <footer className="bg-[#f5f5f7]">
       <div className="w-full max-w-[980px] mx-auto px-4 sm:px-6">
         
+        {/* Logo Section */}
+        <div className="pt-8 sm:pt-10 pb-4 border-b border-[#d2d2d7]">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: [0.28, 0, 0.63, 1] }}
+            className="flex justify-center"
+          >
+            <img 
+              src="/images/marantrix logo.png" 
+              alt="Marantrix Logo" 
+              className="h-12 sm:h-16 w-auto object-contain"
+            />
+          </motion.div>
+        </div>
+
         {/* Main Footer Content */}
         <div className="pt-8 sm:pt-10 md:pt-12 pb-4 sm:pb-5 border-b border-[#d2d2d7]">
           <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-12">
