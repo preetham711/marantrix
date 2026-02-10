@@ -44,9 +44,9 @@ const FooterApple = () => {
       title: 'Contact',
       links: [
         { label: 'Get In Touch', id: 'contact' },
-        { label: 'Schedule Call', id: 'contact' },
+        { label: 'WhatsApp: +91 9266883303', id: 'contact', isExternal: true, href: 'https://wa.me/919266883303' },
         { label: 'Email Us', id: 'contact' },
-        { label: 'Careers', id: 'team' },
+        { label: 'Visit Our Office', id: 'contact' },
       ],
     },
   ];
@@ -106,17 +106,33 @@ const FooterApple = () => {
                 <ul className="space-y-2.5">
                   {section.links.map((link) => (
                     <li key={link.label}>
-                      <button
-                        onClick={() => scrollToSection(link.id)}
-                        className="text-xs text-[#6e6e73] hover:text-[#1d1d1f] transition-colors duration-200 block"
-                        style={{ 
-                          letterSpacing: '-0.01em',
-                          fontWeight: 400,
-                          lineHeight: '1.33337'
-                        }}
-                      >
-                        {link.label}
-                      </button>
+                      {link.isExternal && link.href ? (
+                        <a
+                          href={link.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-xs text-[#6e6e73] hover:text-[#0071e3] transition-colors duration-200 block"
+                          style={{ 
+                            letterSpacing: '-0.01em',
+                            fontWeight: 400,
+                            lineHeight: '1.33337'
+                          }}
+                        >
+                          {link.label}
+                        </a>
+                      ) : (
+                        <button
+                          onClick={() => scrollToSection(link.id)}
+                          className="text-xs text-[#6e6e73] hover:text-[#1d1d1f] transition-colors duration-200 block"
+                          style={{ 
+                            letterSpacing: '-0.01em',
+                            fontWeight: 400,
+                            lineHeight: '1.33337'
+                          }}
+                        >
+                          {link.label}
+                        </button>
+                      )}
                     </li>
                   ))}
                 </ul>
@@ -199,14 +215,23 @@ const FooterApple = () => {
             </motion.div>
           </div>
 
-          {/* Country/Region */}
+          {/* Location & Contact Info */}
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3, ease: [0.28, 0, 0.63, 1] }}
-            className="mt-3"
+            className="mt-3 space-y-1"
           >
+            <p 
+              className="text-xs text-[#1d1d1f] font-semibold"
+              style={{ 
+                letterSpacing: '-0.01em',
+                fontWeight: 600
+              }}
+            >
+              Visit Us
+            </p>
             <p 
               className="text-xs text-[#6e6e73]"
               style={{ 
@@ -214,7 +239,16 @@ const FooterApple = () => {
                 fontWeight: 400
               }}
             >
-              United States
+              PTP Nagar, Thiruvananthapuram, Kerala, India
+            </p>
+            <p 
+              className="text-xs text-[#6e6e73]"
+              style={{ 
+                letterSpacing: '-0.01em',
+                fontWeight: 400
+              }}
+            >
+              WhatsApp: <a href="https://wa.me/919266883303" target="_blank" rel="noopener noreferrer" className="text-[#0071e3] hover:underline">+91 9266883303</a>
             </p>
           </motion.div>
         </div>

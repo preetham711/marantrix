@@ -105,15 +105,15 @@ const Contact = () => {
     },
     {
       icon: Phone,
-      label: 'Phone',
-      value: '+1 (555) 123-4567',
-      href: 'tel:+15551234567',
+      label: 'WhatsApp',
+      value: '+91 9266883303',
+      href: 'https://wa.me/919266883303',
     },
     {
       icon: MapPin,
       label: 'Location',
-      value: 'San Francisco, CA',
-      href: '#',
+      value: 'PTP Nagar, Thiruvananthapuram, Kerala, India',
+      href: 'https://maps.google.com/?q=PTP+Nagar+Thiruvananthapuram+Kerala+India',
     },
   ];
 
@@ -171,10 +171,13 @@ const Contact = () => {
             <div className="space-y-5">
               {contactInfo.map((item, index) => {
                 const Icon = item.icon;
+                const isExternal = item.href.startsWith('http');
                 return (
                   <motion.a
                     key={index}
                     href={item.href}
+                    target={isExternal ? "_blank" : undefined}
+                    rel={isExternal ? "noopener noreferrer" : undefined}
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
