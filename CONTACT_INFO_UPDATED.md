@@ -4,7 +4,7 @@
 
 ### Location & Contact Details Added
 - **Location**: PTP Nagar, Thiruvananthapuram, Kerala, India
-- **WhatsApp**: +91 9266883303 (WhatsApp only)
+- **WhatsApp**: +63 9266883303 (Philippines - WhatsApp only)
 - **Email**: marantrix@gmail.com (already configured)
 
 ## Updated Components
@@ -23,8 +23,8 @@ const contactInfo = [
   {
     icon: Phone,
     label: 'WhatsApp',
-    value: '+91 9266883303',
-    href: 'https://wa.me/919266883303',
+    value: '+63 9266883303',
+    href: 'https://wa.me/639266883303',
   },
   {
     icon: MapPin,
@@ -51,7 +51,7 @@ Added WhatsApp link in the Contact column:
   title: 'Contact',
   links: [
     { label: 'Get In Touch', id: 'contact' },
-    { label: 'WhatsApp: +91 9266883303', id: 'contact', isExternal: true, href: 'https://wa.me/919266883303' },
+    { label: 'WhatsApp: +63 9266883303', id: 'contact', isExternal: true, href: 'https://wa.me/639266883303' },
     { label: 'Email Us', id: 'contact' },
     { label: 'Visit Our Office', id: 'contact' },
   ],
@@ -69,7 +69,7 @@ Replaced "United States" with your actual location:
     PTP Nagar, Thiruvananthapuram, Kerala, India
   </p>
   <p className="text-xs text-[#6e6e73]">
-    WhatsApp: <a href="https://wa.me/919266883303" target="_blank" rel="noopener noreferrer" className="text-[#0071e3] hover:underline">+91 9266883303</a>
+    WhatsApp: <a href="https://wa.me/639266883303" target="_blank" rel="noopener noreferrer" className="text-[#0071e3] hover:underline">+63 9266883303</a>
   </p>
 </div>
 ```
@@ -91,8 +91,9 @@ When visitors click on:
 
 ### WhatsApp Link Format
 ```
-https://wa.me/919266883303
+https://wa.me/639266883303
 ```
+- Country Code: +63 (Philippines)
 - Works on mobile (opens WhatsApp app)
 - Works on desktop (opens WhatsApp Web)
 - No message pre-filled (clean start)
@@ -122,12 +123,12 @@ Total Size: 393.11 kB
 
 ## Git Status
 ```
-Commit: c923ee1
-Message: Update contact information: Added PTP Nagar, Thiruvananthapuram location and WhatsApp number +91 9266883303
+Commit: ab9ac23
+Message: Update phone number to Philippines country code: +63 9266883303
 Files Changed: 3 files
 - src/components/Contact.tsx
 - src/components/FooterApple.tsx
-- GIT_PUSH_SUCCESS.md
+- CONTACT_INFO_UPDATED.md
 Status: ✅ Pushed to GitHub
 ```
 
@@ -139,7 +140,7 @@ Status: ✅ Pushed to GitHub
    marantrix@gmail.com
 
 📱 WhatsApp
-   +91 9266883303
+   +63 9266883303
 
 📍 Location
    PTP Nagar, Thiruvananthapuram, Kerala, India
@@ -149,13 +150,13 @@ Status: ✅ Pushed to GitHub
 ```
 Contact Column:
 - Get In Touch
-- WhatsApp: +91 9266883303 (clickable)
+- WhatsApp: +63 9266883303 (clickable)
 - Email Us
 - Visit Our Office
 
 Visit Us Section:
 PTP Nagar, Thiruvananthapuram, Kerala, India
-WhatsApp: +91 9266883303 (clickable)
+WhatsApp: +63 9266883303 (clickable)
 ```
 
 ## Testing Checklist
