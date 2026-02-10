@@ -44,7 +44,7 @@ const FooterApple = () => {
       title: 'Contact',
       links: [
         { label: 'Get In Touch', id: 'contact' },
-        { label: 'WhatsApp: +91 9266883303', id: 'contact', isExternal: true, href: 'https://wa.me/919266883303' },
+        { label: 'WhatsApp: +63 9266883303', id: 'contact', isExternal: true, href: 'https://wa.me/639266883303' },
         { label: 'Email Us', id: 'contact' },
         { label: 'Visit Our Office', id: 'contact' },
       ],
@@ -248,7 +248,7 @@ const FooterApple = () => {
                 fontWeight: 400
               }}
             >
-              WhatsApp: <a href="https://wa.me/919266883303" target="_blank" rel="noopener noreferrer" className="text-[#0071e3] hover:underline">+91 9266883303</a>
+              WhatsApp: <a href="https://wa.me/639266883303" target="_blank" rel="noopener noreferrer" className="text-[#0071e3] hover:underline">+63 9266883303</a>
             </p>
           </motion.div>
         </div>

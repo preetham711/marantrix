@@ -106,8 +106,8 @@ const Contact = () => {
     {
       icon: Phone,
       label: 'WhatsApp',
-      value: '+91 9266883303',
-      href: 'https://wa.me/919266883303',
+      value: '+63 9266883303',
+      href: 'https://wa.me/639266883303',
     },
     {
       icon: MapPin,
