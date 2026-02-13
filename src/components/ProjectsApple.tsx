@@ -8,6 +8,7 @@ const ProjectsApple = () => {
       description: "Our in-house platform designed to help users discover local businesses, places, and services, while enabling businesses to promote their offerings and connect with customers.",
       category: "Our Product",
       gradient: "from-blue-600 to-indigo-600",
+      image: "/images/projects/eccentro.jpg",
       isOwnProduct: true,
       link: "https://eccentroweb.com/",
       features: [
@@ -26,6 +27,7 @@ const ProjectsApple = () => {
       description: "A modern, scalable e-commerce solution with real-time inventory management and seamless checkout experience.",
       category: "Web & Mobile",
       gradient: "from-purple-600 to-pink-600",
+      image: "/images/projects/ecommerce.jpg",
       isOwnProduct: false,
     },
     {
@@ -33,6 +35,7 @@ const ProjectsApple = () => {
       description: "HIPAA-compliant telemedicine platform connecting patients with healthcare providers instantly.",
       category: "Mobile App",
       gradient: "from-blue-600 to-cyan-600",
+      image: "/images/projects/healthcare.jpg",
       isOwnProduct: false,
     },
     {
@@ -40,6 +43,7 @@ const ProjectsApple = () => {
       description: "Real-time analytics dashboard for financial institutions with advanced data visualization.",
       category: "Web App",
       gradient: "from-emerald-600 to-teal-600",
+      image: "/images/projects/financial.jpg",
       isOwnProduct: false,
     },
     {
@@ -47,6 +51,7 @@ const ProjectsApple = () => {
       description: "Next-generation social networking platform with AI-powered content recommendations.",
       category: "Web & Mobile",
       gradient: "from-orange-600 to-red-600",
+      image: "/images/projects/social.jpg",
       isOwnProduct: false,
     },
   ];
@@ -149,7 +154,24 @@ const ProjectsApple = () => {
 
                   {/* Image container */}
                   <div className={`relative overflow-hidden ${project.isOwnProduct ? 'h-64 md:h-80' : 'h-48'}`}>
-                    <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient}`} />
+                    {/* Project Image */}
+                    {project.image ? (
+                      <>
+                        <img 
+                          src={project.image} 
+                          alt={project.title}
+                          className="absolute inset-0 w-full h-full object-cover"
+                          onError={(e) => {
+                            // Fallback to gradient if image fails to load
+                            e.currentTarget.style.display = 'none';
+                          }}
+                        />
+                        {/* Gradient overlay for better text visibility */}
+                        <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-80`} />
+                      </>
+                    ) : (
+                      <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient}`} />
+                    )}
                     {project.isOwnProduct && (
                       <div className="absolute inset-0 bg-[#0071e3]/10" />
                     )}
