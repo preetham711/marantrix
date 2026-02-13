@@ -4,28 +4,49 @@ import { ExternalLink, ArrowRight } from 'lucide-react';
 const ProjectsApple = () => {
   const projects = [
     {
+      title: "Eccentro",
+      description: "Our in-house platform designed to help users discover local businesses, places, and services, while enabling businesses to promote their offerings and connect with customers.",
+      category: "Our Product",
+      gradient: "from-blue-600 to-indigo-600",
+      isOwnProduct: true,
+      features: [
+        "Business and place discovery",
+        "Categories for shops, restaurants, services, and events",
+        "Detailed listings with contact information",
+        "User-friendly browsing and search",
+        "Business profiles and promotions",
+        "Location-based exploration",
+        "Clean and simple user experience",
+        "Scalable and future-ready architecture"
+      ]
+    },
+    {
       title: "E-Commerce Platform",
       description: "A modern, scalable e-commerce solution with real-time inventory management and seamless checkout experience.",
       category: "Web & Mobile",
       gradient: "from-purple-600 to-pink-600",
+      isOwnProduct: false,
     },
     {
       title: "Healthcare App",
       description: "HIPAA-compliant telemedicine platform connecting patients with healthcare providers instantly.",
       category: "Mobile App",
       gradient: "from-blue-600 to-cyan-600",
+      isOwnProduct: false,
     },
     {
       title: "Financial Dashboard",
       description: "Real-time analytics dashboard for financial institutions with advanced data visualization.",
       category: "Web App",
       gradient: "from-emerald-600 to-teal-600",
+      isOwnProduct: false,
     },
     {
       title: "Social Media Platform",
       description: "Next-generation social networking platform with AI-powered content recommendations.",
       category: "Web & Mobile",
       gradient: "from-orange-600 to-red-600",
+      isOwnProduct: false,
     },
   ];
 
@@ -88,14 +109,43 @@ const ProjectsApple = () => {
               className="group relative"
             >
               <div 
-                className="relative h-full rounded-[18px] overflow-hidden border bg-white border-[#d2d2d7] hover:border-[#0071e3] transition-all duration-200"
+                className={`relative h-full rounded-[18px] overflow-hidden border bg-white transition-all duration-200 ${
+                  project.isOwnProduct 
+                    ? 'border-[#0071e3] shadow-lg shadow-[#0071e3]/20' 
+                    : 'border-[#d2d2d7] hover:border-[#0071e3]'
+                }`}
                 style={{
-                  boxShadow: '0 2px 8px rgba(0,0,0,0.04)',
+                  boxShadow: project.isOwnProduct 
+                    ? '0 4px 16px rgba(0,113,227,0.15)' 
+                    : '0 2px 8px rgba(0,0,0,0.04)',
                 }}
               >
+                {/* Own Product Badge - Top Right */}
+                {project.isOwnProduct && (
+                  <div className="absolute top-4 right-4 z-10">
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5, delay: 0.3 }}
+                      className="px-3 py-1.5 rounded-full bg-[#0071e3] text-white text-xs font-semibold flex items-center gap-1.5"
+                      style={{ 
+                        fontFamily: '-apple-system, BlinkMacSystemFont, SF Pro Text, sans-serif',
+                        letterSpacing: '-0.003em',
+                      }}
+                    >
+                      <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></span>
+                      Our Product
+                    </motion.div>
+                  </div>
+                )}
+
                 {/* Image container */}
                 <div className="relative h-48 overflow-hidden">
                   <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient}`} />
+                  {project.isOwnProduct && (
+                    <div className="absolute inset-0 bg-[#0071e3]/10" />
+                  )}
                   <div className="absolute inset-0 flex items-center justify-center">
                     <motion.div
                       initial={{ opacity: 0, scale: 0.8 }}
@@ -112,14 +162,20 @@ const ProjectsApple = () => {
                 <div className="p-6">
                   {/* Category badge */}
                   <div className="mb-3">
-                    <span className="inline-block px-2.5 py-0.5 rounded-full text-xs font-normal bg-[#0071e3]/10 text-[#0071e3]">
+                    <span className={`inline-block px-2.5 py-0.5 rounded-full text-xs font-normal ${
+                      project.isOwnProduct 
+                        ? 'bg-[#0071e3] text-white' 
+                        : 'bg-[#0071e3]/10 text-[#0071e3]'
+                    }`}>
                       {project.category}
                     </span>
                   </div>
 
                   {/* Title */}
                   <h3 
-                    className="text-xl font-semibold mb-2 text-[#1d1d1f]"
+                    className={`text-xl font-semibold mb-2 ${
+                      project.isOwnProduct ? 'text-[#0071e3]' : 'text-[#1d1d1f]'
+                    }`}
                     style={{ 
                       fontFamily: '-apple-system, BlinkMacSystemFont, SF Pro Display, sans-serif',
                       letterSpacing: '-0.007em',
@@ -148,7 +204,7 @@ const ProjectsApple = () => {
                     className="flex items-center gap-2 text-[#0071e3] font-normal text-base group-hover:gap-3 transition-all duration-200"
                     whileHover={{ x: 4 }}
                   >
-                    <span>View Project</span>
+                    <span>{project.isOwnProduct ? 'Learn More' : 'View Project'}</span>
                     <ArrowRight className="w-4 h-4" />
                   </motion.div>
                 </div>
