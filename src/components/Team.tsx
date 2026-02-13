@@ -4,15 +4,15 @@ const Team = () => {
   const teamMembers = [
     {
       name: 'Sukumar',
-      role: 'Co-Founder & CEO',
+      role: 'CEO & Developer',
       image: '/images/colour 1.jpeg',
-      bio: 'Visionary leader driving innovation and strategic growth.',
+      bio: 'Driving innovation and delivering high-quality digital solutions.',
     },
     {
       name: 'Preetham',
-      role: 'Co-Founder & CTO',
+      role: 'UI/UX Designer & Developer',
       image: '/images/colour 2.jpeg',
-      bio: 'Technical architect building scalable digital solutions.',
+      bio: 'Creating simple, effective, and user-focused digital experiences.',
     },
   ];
 

@@ -1,7 +1,91 @@
-# ✅ Eccentro Project Added to Featured Projects
+# ✅ Eccentro Project - Full-Width Featured Display
 
 ## Overview
-Successfully added Eccentro as the first featured project with special highlighting to showcase it as Marantrix's own product.
+Successfully upgraded Eccentro to a full-width featured card that spans 2 columns, with enhanced highlighting and a direct link to https://eccentroweb.com/
+
+## Enhanced Design
+
+### Full-Width Layout
+- **Desktop**: Spans 2 columns (full width)
+- **Mobile**: Full width (1 column)
+- **Position**: First in Featured Projects section
+- **Prominence**: Takes up twice the space of other projects
+
+### Larger Dimensions
+1. **Image Height**
+   - Desktop: 320px (h-80)
+   - Mobile: 256px (h-64)
+   - Other projects: 192px (h-48)
+
+2. **Padding**
+   - Desktop: 40px (p-10)
+   - Mobile: 32px (p-8)
+   - Other projects: 24px (p-6)
+
+3. **Text Sizes**
+   - Title: text-2xl md:text-3xl (vs text-xl)
+   - Description: text-lg (vs text-base)
+   - Icon: w-8 h-8 (vs w-6 h-6)
+
+### Website Link Integration
+**URL**: https://eccentroweb.com/
+- Opens in new tab
+- "Visit Website" button (blue background)
+- External link icon
+- Hover scale effect (1.05)
+- Positioned on desktop: right side
+- Positioned on mobile: below content
+
+### Feature List Display
+Shows 6 key features with checkmarks:
+- ✓ Business and place discovery
+- ✓ Categories for shops, restaurants, services, and events
+- ✓ Detailed listings with contact information
+- ✓ User-friendly browsing and search
+- ✓ Business profiles and promotions
+- ✓ Location-based exploration
+
+**Layout**:
+- 2 columns on desktop (sm:grid-cols-2)
+- 1 column on mobile
+- Blue checkmarks (#0071e3)
+- Gray text (#6e6e73)
+
+## Visual Hierarchy
+
+### Eccentro Card (Our Product)
+```
+┌─────────────────────────────────────────────┐
+│  [Our Product Badge]                        │
+│                                             │
+│         Larger Gradient Image               │
+│         (h-64 md:h-80)                      │
+│                                             │
+├─────────────────────────────────────────────┤
+│  [Our Product] Badge                        │
+│  Eccentro (Blue, Larger Title)              │
+│  Description (Larger text)                  │
+│                                             │
+│  ✓ Feature 1    ✓ Feature 4                │
+│  ✓ Feature 2    ✓ Feature 5                │
+│  ✓ Feature 3    ✓ Feature 6                │
+│                                             │
+│  [Visit Website Button] →                   │
+└─────────────────────────────────────────────┘
+```
+
+### Other Project Cards
+```
+┌──────────────────┐  ┌──────────────────┐
+│  Gradient Image  │  │  Gradient Image  │
+│  (h-48)          │  │  (h-48)          │
+├──────────────────┤  ├──────────────────┤
+│  [Category]      │  │  [Category]      │
+│  Title           │  │  Title           │
+│  Description     │  │  Description     │
+│  View Project →  │  │  View Project →  │
+└──────────────────┘  └──────────────────┘
+```
 
 ## Project Details
 
@@ -24,37 +108,47 @@ Eccentro is our in-house platform designed to help users discover local business
 - ✅ Clean and simple user experience
 - ✅ Scalable and future-ready architecture
 
-## Visual Highlighting
+## Special Highlighting Features
 
-### Special Design Elements
-1. **"Our Product" Badge** (Top Right)
-   - Blue background (#0071e3)
-   - White text
-   - Pulsing white dot indicator
-   - Animated entrance
+### 1. "Our Product" Badge (Top Right)
+- Blue background (#0071e3)
+- White text
+- Pulsing white dot indicator
+- Animated entrance (scale + fade)
 
-2. **Card Border**
-   - Blue border (#0071e3) - always visible
-   - Other projects: Gray border, blue on hover
-   - Makes Eccentro stand out immediately
+### 2. Full-Width Card
+- Spans 2 columns on desktop (md:col-span-2)
+- Takes up entire row width
+- More prominent than other projects
 
-3. **Shadow Effect**
-   - Blue shadow with 15% opacity
-   - Larger shadow (4px vs 2px)
-   - Creates depth and prominence
+### 3. Blue Border & Shadow
+- Blue border (#0071e3) - always visible
+- Blue shadow with 15% opacity
+- Larger shadow (4px vs 2px)
+- Creates depth and prominence
 
-4. **Category Badge**
-   - Solid blue background (not transparent)
-   - White text
-   - "Our Product" label
+### 4. Larger Content
+- Bigger image (320px vs 192px on desktop)
+- Larger title (text-3xl vs text-xl)
+- Larger description text
+- More padding (40px vs 24px)
 
-5. **Title Color**
-   - Blue (#0071e3) instead of dark gray
-   - Emphasizes it's a Marantrix product
+### 5. Feature List
+- 6 features with blue checkmarks
+- 2-column grid on desktop
+- Professional presentation
 
-6. **Call-to-Action**
-   - "Learn More" instead of "View Project"
-   - Indicates it's our own product
+### 6. Visit Website Button
+- Blue background (#0071e3)
+- White text
+- External link icon
+- Opens https://eccentroweb.com/
+- Hover scale effect
+
+### 7. Enhanced Typography
+- Blue title color (#0071e3)
+- Solid blue category badge
+- Larger, more readable text
 
 ## Project Order
 1. **Eccentro** (Our Product) ⭐ - HIGHLIGHTED
@@ -81,44 +175,70 @@ Eccentro is our in-house platform designed to help users discover local business
 - Badge entrance animation
 - Arrow slide on hover
 
-## Code Structure
+## Code Implementation
 
+### Grid Layout
 ```typescript
-const projects = [
-  {
-    title: "Eccentro",
-    description: "Our in-house platform...",
-    category: "Our Product",
-    gradient: "from-blue-600 to-indigo-600",
-    isOwnProduct: true,
-    features: [...]
-  },
-  // ... other projects
-];
+<div className="grid grid-cols-1 md:grid-cols-2 gap-2 sm:gap-3">
+  {projects.map((project, index) => (
+    <motion.div
+      className={`group relative ${project.isOwnProduct ? 'md:col-span-2' : ''}`}
+    >
+      <a
+        href={project.link || '#'}
+        target={project.link ? "_blank" : undefined}
+        rel={project.link ? "noopener noreferrer" : undefined}
+      >
+        {/* Card content */}
+      </a>
+    </motion.div>
+  ))}
+</div>
 ```
 
-### Conditional Styling
+### Responsive Sizing
 ```typescript
-// Border and shadow
-className={`${
-  project.isOwnProduct 
-    ? 'border-[#0071e3] shadow-lg shadow-[#0071e3]/20' 
-    : 'border-[#d2d2d7] hover:border-[#0071e3]'
+// Image height
+className={`relative overflow-hidden ${
+  project.isOwnProduct ? 'h-64 md:h-80' : 'h-48'
 }`}
 
-// Category badge
-className={`${
-  project.isOwnProduct 
-    ? 'bg-[#0071e3] text-white' 
-    : 'bg-[#0071e3]/10 text-[#0071e3]'
-}`}
+// Padding
+className={`${project.isOwnProduct ? 'p-8 md:p-10' : 'p-6'}`}
 
-// Title color
-className={`${
-  project.isOwnProduct 
-    ? 'text-[#0071e3]' 
-    : 'text-[#1d1d1f]'
-}`}
+// Title size
+className={`${project.isOwnProduct ? 'text-2xl md:text-3xl' : 'text-xl'}`}
+
+// Description size
+className={`${project.isOwnProduct ? 'text-lg' : 'text-base'}`}
+```
+
+### Feature List
+```typescript
+{project.isOwnProduct && project.features && (
+  <div className="mb-6 grid grid-cols-1 sm:grid-cols-2 gap-2">
+    {project.features.slice(0, 6).map((feature, idx) => (
+      <div key={idx} className="flex items-start gap-2">
+        <span className="text-[#0071e3] mt-1">✓</span>
+        <span className="text-sm text-[#6e6e73]">{feature}</span>
+      </div>
+    ))}
+  </div>
+)}
+```
+
+### Visit Website Button
+```typescript
+{project.isOwnProduct && project.link && (
+  <motion.div
+    whileHover={{ scale: 1.05 }}
+    whileTap={{ scale: 0.95 }}
+    className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#0071e3] text-white"
+  >
+    Visit Website
+    <ExternalLink className="w-4 h-4" />
+  </motion.div>
+)}
 ```
 
 ## User Experience
@@ -142,21 +262,49 @@ className={`${
 ## Build Status
 ```
 ✓ Built successfully
-Total Size: 394.78 kB
-- index.css:   77.58 kB
-- index.js:    52.01 kB
+Total Size: 396.37 kB
+- index.css:   77.81 kB
+- index.js:    53.37 kB
 - motion.js:  125.88 kB
 - vendor.js:  139.31 kB
 ```
 
 ## Git Status
 ```
-Commit: cc468d8
-Message: Add Eccentro project: Our in-house product for business and place discovery
-Files Changed: 1 file
-- src/components/ProjectsApple.tsx (61 insertions, 5 deletions)
+Commit: 2f2cc4a
+Message: Upgrade Eccentro project card: Full-width featured display
+Files Changed: 2 files
+- src/components/ProjectsApple.tsx (334 insertions, 94 deletions)
+- ECCENTRO_PROJECT_ADDED.md (created)
 Status: ✅ Pushed to GitHub
 ```
+
+## Key Features Summary
+
+### Eccentro Enhancements
+✅ Full-width card (spans 2 columns)
+✅ Larger image (320px vs 192px)
+✅ Website link: https://eccentroweb.com/
+✅ "Visit Website" button
+✅ Feature list with 6 items
+✅ Larger text and padding
+✅ Blue highlighting throughout
+✅ "Our Product" badge with pulse
+✅ Opens in new tab
+
+### Layout
+- Desktop: Eccentro full width, others 2 columns
+- Mobile: All full width, Eccentro first
+- Responsive and accessible
+- Apple design standards maintained
+
+---
+
+**Status**: ✅ Complete and Live on GitHub
+**Repository**: https://github.com/preetham711/marantrix.git
+**Commit**: 2f2cc4a
+**Website**: https://eccentroweb.com/
+**Last Updated**: February 10, 2026
 
 ## Features Not Changed
 ✅ Existing projects remain unchanged
